@@ -37,24 +37,20 @@ static void fileSetter(char* file)
 }
 
 
-char* tokStr[] = {"+", "-", "*", "/", "INTLIT"};
-
 // scans input for tokens, prints terminals
 static void scanFile(void)
 {
-    struct Token tok;
+    // scans an initial primary token
+    scan(&token);
 
-    while (scan(&tok))
-    {
-        printf("token: %s", tokStr[tok.token]);
+    // generate AST tree
+    struct ASTnode *tree = ASTgen();
 
-        if (tok.token == T_INTLIT)
-        {
-            printf("\tvalue: %d", tok.intValue);
-        }
+    // interpret the AST tree
+    int result = ASTinterpreter(tree);
 
-        printf("\n");
-    }
+    // printing result to terminal
+    printf("result: %d\n", result);
 }
 
 
