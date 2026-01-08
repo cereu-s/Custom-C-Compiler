@@ -39,4 +39,4 @@ struct ASTnode
     struct ASTnode *left, *right;       // left and right child
     int op;                             // corresponding operation between the childs
     int intValue;                       // value, in case of INTLIT
-}
+};
