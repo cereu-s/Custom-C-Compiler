@@ -43,8 +43,8 @@ static void scanFile(void)
     // scans an initial primary token
     scan(&token);
 
-    // generate AST tree
-    struct ASTnode *tree = ASTgen();
+    // generate AST tree with operator precedence
+    struct ASTnode *tree = additiveExpr();
 
     // interpret the AST tree
     int result = ASTinterpreter(tree);
