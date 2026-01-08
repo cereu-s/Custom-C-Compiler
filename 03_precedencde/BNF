@@ -1,7 +1,15 @@
-<expression> ::=  <number>
-                | <expression> + <expression>
-                | <expression> - <expression>
-                | <expression> * <expression>
-                | <expression> / <expression>
+<additive-expression> ::=   <multipicative-expression> + <multipicative-expression>
+                          | <multipicative-expression> - <multipicative-expression>
+                          ;
 
-<number> ::= T_INTLIT
+<multipicative-expression> ::=  <number>
+                              | <multipicative-expression> * <multipicative-expression>
+                              | <multipicative-expression> / <multipicative-expression>
+                              ;
+
+<number> ::=  T_INTLIT
+            ;
+
+                    
+
+
